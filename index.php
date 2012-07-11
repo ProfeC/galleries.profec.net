@@ -2,10 +2,11 @@
 	// Show all errors
 	//error_reporting(E_ALL);
 	$galleryURI = null;
+	$galleryRoot = 'images';
 	
 	if(!empty($_GET['g'])){
 		$gallery = $_GET['g'];
-		$galleryDir = dirname(__FILE__) . '/' . base64_decode($gallery);
+		$galleryDir = dirname(__FILE__) . '/' . $galleryRoot . '/' . base64_decode($gallery);
 		
 		if(!empty($_GET['t'])){
 			$galleryTitle = base64_decode($_GET['t']);
@@ -14,116 +15,11 @@
 		}
 	} else {
 		$gallery = null;
-		$galleryDIR = null;
+		$galleryDir = null;
 		$galleryTitle = 'Gallery Listing';
 	}
-
-	function getImageArray($thisGallery, $thisDir){
-		$filesArray = array();
-		$dir = opendir($thisDir);
-		while (false !== ($file = readdir($dir))){
-			$extension = strtolower(substr(strrchr($file, '.'), 1));
-			if($extension == 'jpg'){
-				$filesArray[] = $file;
-			}
-		}
-		closedir($dir);
-
-		return sort($filesArray); //, SORT_STRING
-	}
-
-	function getImages($thisGallery, $thisDir){
-		$filesArray = array();
-		$dir = opendir($thisDir);
-		while (false !== ($file = readdir($dir))){
-			$extension = strtolower(substr(strrchr($file, '.'), 1));
-			if($extension == 'jpg'){
-				$filesArray[] = $file;
-			}
-		}
-		closedir($dir);
-
-		sort($filesArray); //, SORT_STRING
-		$fileCount = count($filesArray);
-				
-		echo "var imageData = [\n";
-		for($i=0; $i<sizeof($filesArray); $i++){
-			$image = base64_decode($thisGallery) . "/" .$filesArray[$i];
-			$imageExif = exif_read_data($image, 'ANY_TAG', true);
-			//print_r($imageExif);
-         $imageTitle = $imageExif['FILE']['FileName'];
-			$imageDescription = $imageExif['EXIF']['ExposureTime'] . 's @ ' .$imageExif['COMPUTED']['ApertureFNumber'] . ' on ISO ' . $imageExif['EXIF']['ISOSpeedRatings'];
-			echo "\t\t{\"image\":\"$image\", \"title\":\"$imageTitle\", \"description\":\"$imageDescription\", \"link\":null}";
-		
-			if($fileCount > 1){
-				echo ",\n";
-				$fileCount--;
-			} else {
-				echo "\n\t\t\t\t\t\t]\n";
-			}
-		}		
-	} // end getImages();
-
-	function getSlideImages($thisDir){
-		$filesArray = array();
-		$dir = opendir(dirname(__FILE__) . '/' . $thisDir);
-		while (false !== ($file = readdir($dir))){
-			$extension = strtolower(substr(strrchr($file, '.'), 1));
-			if($extension == 'jpg'){
-				$filesArray[] = $file;
-			}
-		}
-		closedir($dir);
-
-		sort($filesArray, SORT_STRING);
-		$fileCount = count($filesArray);
-				
-		echo "var slideImageData = [\n";
-		for($i=0; $i<sizeof($filesArray); $i++){
-			$image = $thisDir . "/" .$filesArray[$i];
-			$imageExif = exif_read_data($image, 'ANY_TAG', true);
-			//print_r($imageExif);
-         $imageTitle = $imageExif['FILE']['FileName'];
-			$imageDescription = $imageExif['EXIF']['ExposureTime'] . 's @ ' .$imageExif['COMPUTED']['ApertureFNumber'] . ' on ISO ' . $imageExif['EXIF']['ISOSpeedRatings'];
-			// echo "\t\t{\"image\":\"$image\", \"title\":\"$imageTitle\", \"description\":\"$imageDescription\", \"link\":null}";
-			echo "\t\t{\n\t\t\t'content':'<div class=\"slide_inner\"><img class=\"photo\" src=\"" . $image . "\" alt=\"" . $imageTitle . "\" /></div>'\n}";
-		
-			/*
-			"content": "<div class='slide_inner'><a target='_blank' class='photo_link' href='#'><img class='photo' src='images/banner_bike.jpg' alt='Bike'></a><a target='_blank' class='caption' href='#'>Sample Carousel Pic Goes Here And The Best Part is that...</a></div>",
-		    "content_button": "<div class='thumb'><img src='images/f2_thumb.jpg' alt='bike is nice'></div><p>Agile Carousel Place Holder</p>"
-				*/
-			if($fileCount > 1){
-				echo ",\n";
-				$fileCount--;
-			} else {
-				echo "\n\t\t\t\t\t\t];\n";
-			}
-		}		
-	} // end getSlideImages();
 	
-	// From: http://webcache.googleusercontent.com/search?q=cache:wNFb4W-Sj_4J:www.codingforums.com/showthread.php%3Ft%3D71882+&cd=9&hl=en&ct=clnk&gl=us
-	function getDirectory( $path = '.', $level = 0 ){ // Directories to ignore when listing output. Many hosts will deny PHP access to the cgi-bin.
-	    $ignore = array( 'cgi-bin', '.', '..', '_' ); 
-		$dirArray = array();
-	    $dh = @opendir( $path ); // Open the directory to the handle $dh 
-		
-	    while( false !== ( $dir = readdir( $dh ) ) ){ // Loop through the directory
-	        if( !in_array( $dir, $ignore ) ){ // Check that this directory is not to be ignored
-	            if( is_dir( "$path/$dir" ) ){ // Its a directory, so we need to keep reading down... 
-					$dirArray[] = $dir;
-//	                echo "<li><a href=\"index.php?g=" . base64_encode($path . '/' . $dir) . "&t=" . base64_encode($dir) . "\">$dir</a></li>\n"; 
-	            }
-	        } 
-	    }  
-	    
-	    closedir( $dh ); // Close the directory handle
-		sort($dirArray); // Sort the directory array
-		
-		foreach ($dirArray as $directory){
-			echo "<li><a href=\"index.php?g=" . base64_encode($path . '/' . $directory) . "&t=" . base64_encode($directory) . "\">$directory</a></li>\n"; 
-		};
-	}
-	
+	include('./models/functions.php');
 ?>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -136,13 +32,13 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link type="text/plain" rel="author" href="http://profec.net/galleries/humans.txt" />
-      <link rel="stylesheet" href="_css/bootstrap.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
       <style>
          body {padding-top:100px; padding-bottom:40px}
       </style>
-      <link rel="stylesheet" href="_css/bootstrap-responsive.css">
-		<link rel="stylesheet" href="_js/agile-carousel/agile_carousel.css">
-		<link rel="stylesheet" href="_css/style.css" media="screen" />
+      <link rel="stylesheet" href="css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="scripts/agile-carousel/agile_carousel.css">
+		<link rel="stylesheet" href="css/style.css" media="screen" />
       <script src="https://www.google.com/jsapi?key=ABQIAAAAej7hXzR0rP7OpeEWXDbZwRSs398M-qenCUxXFsvB2vyWwj3LVhRwpiLOd8BN-S9sJfnM8ElmmEFGEg" type="text/javascript"></script>
       <script language="Javascript" type="text/javascript">
          //<![CDATA[
@@ -161,8 +57,8 @@
          //]]>
       </script>
 
-      <script src="_js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
-      <script type="text/javascript" src="_js/galleria/galleria-1.2.7.min.js"></script>
+      <script src="scripts/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+      <script type="text/javascript" src="scripts/galleria/galleria-1.2.7.min.js"></script>
    </head>
 	<body>
 
@@ -189,48 +85,8 @@
       <div class="container">
          <?php
             if($gallery == null){
-				/*echo '<div class="container">
-			      <div class="hero-unit">
-			        <div id="slideshow"></div>
-			      </div>
-				</div>
-			    ';*/
-				
-				echo '<div id="gallery">';
-
-					echo "<h3>2012</h3>\n<ul>\n";
-					getDirectory('2012');
-					echo "</ul>\n";
-					
-					echo "<h3>2011</h3>\n<ul>\n";
-					getDirectory('2011');
-					echo "</ul>\n";
-					
-					echo "<h3>2010</h3>\n<ul>\n";
-					getDirectory('2010');
-					echo "</ul>\n";
-					
-					echo "<h3>2009</h3>\n<ul>\n";
-					getDirectory('2009');
-					echo "</ul>\n";
-					
-					echo "<h3>2008</h3>\n<ul>\n";
-					getDirectory('2008');
-					echo "</ul>\n";
-
-					echo "<h3>2007</h3>\n<ul>\n";
-					getDirectory('2007');
-					echo "</ul>\n";
-					
-					echo "<h3>2006</h3>\n<ul>\n";
-					getDirectory('2006');
-					echo "</ul>\n";
-					
-				// end gallery div
-				echo '</div>';
-				
-				// Add script for slideshow
-				echo '<script type="text/javascript" src="_js/agile-carousel/agile_carousel.alpha.js"></script>';
+				include('views/carousel.php');
+				include('views/list.php');
             } else {
                echo '<div id="gallery" class="go-shadow"></div>';
             }
@@ -243,11 +99,10 @@
             if($gallery != null){
                getImages($gallery, $galleryDir);
                
-               echo "\n\tGalleria.loadTheme('_js/galleria/themes/classic/galleria.classic.min.js');";
+               echo "\n\tGalleria.loadTheme('scripts/galleria/themes/classic/galleria.classic.min.js');";
                echo "\n\tGalleria.run('#gallery', {\n\t\tdataSource:imageData,\n\t\t'height':0.70,\n\t\t//'imageCrop':'height',\n\t\t'imageMargin':13,\n\t\t'responsive':true,\n\t\t'imagePan':true,\n\t\t'transition':'fade',\n\t\t'autoplay':5000,\n\t\t'thumbquality':false\n\t});\n";
             } else {
 				echo "slides:[\n\t\t/* no photos on the index. This is a directory listing. */\n\t]\n";
-
 
 				getSlideImages('2012/Kidstock 2012');
 				
@@ -265,18 +120,14 @@
 					});
 				});
 				';
-
-
-
             }
             ?>
          //]]>
-         
       </script>
 
-      <script src="_js/libs/bootstrap/bootstrap.min.js"></script>
-      <script src="_js/plugins.js"></script>
-      <script src="_js/script.js"></script>
+      <script src="scripts/libs/bootstrap/bootstrap.min.js"></script>
+      <script src="scripts/plugins.js"></script>
+      <script src="scripts/script.js"></script>
 
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
