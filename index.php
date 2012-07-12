@@ -1,8 +1,9 @@
 <?php
 	// Show all errors
-	//error_reporting(E_ALL);
+	// error_reporting(E_ALL);
 	$galleryURI = null;
-	$galleryRoot = 'images';
+	$galleryRoot = 'images/gallery';
+	$galleryFeature = $galleryRoot . '/' . '2012/Kidstock 2012';
 	
 	if(!empty($_GET['g'])){
 		$gallery = $_GET['g'];
@@ -31,7 +32,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link type="text/plain" rel="author" href="http://profec.net/galleries/humans.txt" />
+      <link type="text/plain" rel="author" href="/humans.txt" />
       <link rel="stylesheet" href="css/bootstrap.css">
       <style>
          body {padding-top:100px; padding-bottom:40px}
@@ -67,7 +68,7 @@
       <div class="navbar navbar-fixed-top">
          <div class="navbar-inner">
             <div class="container">
-               <h1 class="brand"><a href="/galleries/index.php" title="Koert-Clark Photography">Koert-Clark Photography</a></h1>
+               <h1 class="brand"><a href="<?php echo $_SERVER['PHP_SELF'] ?>" title="Koert-Clark Photography">Koert-Clark Photography</a></h1>
                <h2 id="galleryTitle" class="go-right"><?php echo $galleryTitle; ?></h2>
                <!--a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a-->
                <!--div class="nav-collapse">
@@ -85,7 +86,7 @@
       <div class="container">
          <?php
             if($gallery == null){
-				include('views/carousel.php');
+				//include('views/carousel.php');
 				include('views/list.php');
             } else {
                echo '<div id="gallery" class="go-shadow"></div>';
@@ -103,23 +104,6 @@
                echo "\n\tGalleria.run('#gallery', {\n\t\tdataSource:imageData,\n\t\t'height':0.70,\n\t\t//'imageCrop':'height',\n\t\t'imageMargin':13,\n\t\t'responsive':true,\n\t\t'imagePan':true,\n\t\t'transition':'fade',\n\t\t'autoplay':5000,\n\t\t'thumbquality':false\n\t});\n";
             } else {
 				echo "slides:[\n\t\t/* no photos on the index. This is a directory listing. */\n\t]\n";
-
-				getSlideImages('2012/Kidstock 2012');
-				
-				echo'
-				jQuery(document).ready(function () {
-					jQuery("#slideshow").agile_carousel({
-						carousel_data: slideImageData,
-						carousel_outer_height: 250,
-						carousel_height: 250,
-						slide_height: 230,
-						carousel_outer_width: 800,
-						slide_width: 800,
-						transition_type: "fade",
-						timer: 5000
-					});
-				});
-				';
             }
             ?>
          //]]>
