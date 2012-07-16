@@ -14,7 +14,6 @@
 	}
 
 	function getImages($thisGallery, $thisDir){
-		global $galleryRoot;
 		$filesArray = array();
 		$dir = opendir($thisDir);
 		while (false !== ($file = readdir($dir))){
@@ -30,7 +29,7 @@
 				
 		echo "var imageData = [\n";
 		for($i=0; $i<sizeof($filesArray); $i++){
-			$image = $galleryRoot . '/' . base64_decode($thisGallery) . '/' . $filesArray[$i];
+			$image = GALLERY_ROOT . '/' . base64_decode($thisGallery) . '/' . $filesArray[$i];
 			$imageExif = exif_read_data($image, 'ANY_TAG', true);
 			//print_r($imageExif);
          $imageTitle = $imageExif['FILE']['FileName'];
@@ -85,14 +84,13 @@
 	
 	// From: http://webcache.googleusercontent.com/search?q=cache:wNFb4W-Sj_4J:www.codingforums.com/showthread.php%3Ft%3D71882+&cd=9&hl=en&ct=clnk&gl=us
 	function getDirectory( $path = '.', $level = 0 ){ // Directories to ignore when listing output. Many hosts will deny PHP access to the cgi-bin.
-	    global $galleryRoot;
 		$ignore = array( 'cgi-bin', '.', '..', '_' ); 
 		$dirArray = array();
-	    $dh = @opendir( $galleryRoot . '/' . $path ); // Open the directory to the handle $dh 
+	    $dh = @opendir( GALLERY_ROOT . '/' . $path ); // Open the directory to the handle $dh 
 		
 	    while( false !== ( $dir = readdir( $dh ) ) ){ // Loop through the directory
 	        if( !in_array( $dir, $ignore ) ){ // Check that this directory is not to be ignored
-	            if( is_dir( "$galleryRoot/$path/$dir" ) ){ // Its a directory, so we need to keep reading down... 
+	            if( is_dir( "GALLERY_ROOT/$path/$dir" ) ){ // Its a directory, so we need to keep reading down... 
 					$dirArray[] = $dir;
 //	                echo "<li><a href=\"index.php?g=" . base64_encode($path . '/' . $dir) . "&t=" . base64_encode($dir) . "\">$dir</a></li>\n"; 
 	            }
