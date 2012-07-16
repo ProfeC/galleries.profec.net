@@ -44,7 +44,7 @@
 				//include('views/carousel.php');
 				include('./views/list.php');
             } else {
-               echo '<div id="gallery" class="go-shadow"></div>';
+              include('./views/gallery.php');
             }
          ?>
 		</div>

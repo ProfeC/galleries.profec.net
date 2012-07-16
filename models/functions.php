@@ -55,7 +55,6 @@
 			}
 		}
 		closedir($dir);
-
 		sort($filesArray, SORT_STRING);
 		$fileCount = count($filesArray);
 				
@@ -82,27 +81,26 @@
 		}		
 	} // end getSlideImages();
 	
+	
 	// From: http://webcache.googleusercontent.com/search?q=cache:wNFb4W-Sj_4J:www.codingforums.com/showthread.php%3Ft%3D71882+&cd=9&hl=en&ct=clnk&gl=us
-	function getDirectory( $path = '.', $level = 0 ){ // Directories to ignore when listing output. Many hosts will deny PHP access to the cgi-bin.
-		$ignore = array( 'cgi-bin', '.', '..', '_' ); 
+	function getDirectory($path = '.', $level = 0){ // Directories to ignore when listing output. Many hosts will deny PHP access to the cgi-bin.
+		$ignore = array('cgi-bin', '.', '..', '_'); 
 		$dirArray = array();
-	    $dh = @opendir( GALLERY_ROOT . '/' . $path ); // Open the directory to the handle $dh 
+	    $dh = @opendir(GALLERY_ROOT . '/' . $path); // Open the directory to the handle $dh 
 		
-	    while( false !== ( $dir = readdir( $dh ) ) ){ // Loop through the directory
-	        if( !in_array( $dir, $ignore ) ){ // Check that this directory is not to be ignored
-	            if( is_dir( "GALLERY_ROOT/$path/$dir" ) ){ // Its a directory, so we need to keep reading down... 
+	    while(false !== ($dir = readdir($dh))){ // Loop through the directory
+	        if(!in_array($dir, $ignore)){ // Check that this directory is not to be ignored
+	            if(is_dir(GALLERY_ROOT . "/$path/$dir")){ 
 					$dirArray[] = $dir;
-//	                echo "<li><a href=\"index.php?g=" . base64_encode($path . '/' . $dir) . "&t=" . base64_encode($dir) . "\">$dir</a></li>\n"; 
 	            }
 	        } 
 	    }  
 	    
-	    closedir( $dh ); // Close the directory handle
+	    closedir($dh); // Close the directory handle
 		sort($dirArray); // Sort the directory array
 		
 		foreach($dirArray as $directory){
-			echo "<li><a href=\"index.php?g=" . base64_encode($path . '/' . $directory) . "&t=" . base64_encode($directory) . "\">$directory</a></li>\n"; 
-			//echo "<li><a href=\"index.php?g=" . $path . '/' . $directory . "&t=" . $directory . "\">$directory</a></li>\n"; 
+			echo "<li><a href=\"index.php?g=" . base64_encode($path . '/' . $directory) . "&t=" . base64_encode($directory) . "\">$directory</a></li>\n";
 		};
 	}
 ?>
