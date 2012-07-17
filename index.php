@@ -1,19 +1,8 @@
 <?php
-	// Include globals
-	// include('./models/globals.php');
-	
-	// Show all errors
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
-	ini_set("report_memleaks", 1);
-	ini_set("memory_limit", "64M");
-	
-	// Constants
-	define("GALLERY_ROOT", "images/gallery");
-	
-	// Variables
-	$galleryURI = null;
-	$galleryFeature = GALLERY_ROOT . '/' . '2012/Kidstock 2012';
+	include_once("controllers/controller.php");
+
+	$controller = new Controller();
+	$controller->invoke();
 	
 	if(!empty($_GET['g'])){
 		$gallery = $_GET['g'];

@@ -29,7 +29,7 @@
 				
 		echo "var imageData = [\n";
 		for($i=0; $i<sizeof($filesArray); $i++){
-			$image = GALLERY_ROOT . '/' . base64_decode($thisGallery) . '/' . $filesArray[$i];
+			$image = GALLERY_ROOT . base64_decode($thisGallery) . '/' . $filesArray[$i];
 			$imageExif = exif_read_data($image, 'ANY_TAG', true);
 			//print_r($imageExif);
          $imageTitle = $imageExif['FILE']['FileName'];
@@ -86,11 +86,11 @@
 	function getDirectory($path = '.', $level = 0){ // Directories to ignore when listing output. Many hosts will deny PHP access to the cgi-bin.
 		$ignore = array('cgi-bin', '.', '..', '_'); 
 		$dirArray = array();
-	    $dh = @opendir(GALLERY_ROOT . '/' . $path); // Open the directory to the handle $dh 
+	    $dh = @opendir(GALLERY_ROOT . $path); // Open the directory to the handle $dh 
 		
 	    while(false !== ($dir = readdir($dh))){ // Loop through the directory
 	        if(!in_array($dir, $ignore)){ // Check that this directory is not to be ignored
-	            if(is_dir(GALLERY_ROOT . "/$path/$dir")){ 
+	            if(is_dir(GALLERY_ROOT . "$path/$dir")){ 
 					$dirArray[] = $dir;
 	            }
 	        } 
