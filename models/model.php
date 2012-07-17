@@ -2,7 +2,17 @@
 	//include_once("models/gallery.php");
 	
 	class Model {
-		public function getGalleryList($path = '.', $level = 0){
+		public function getTitle(){
+			if(!empty($_GET['t'])){
+				$title = base64_decode($_GET['t']);
+			} else {
+				$title = 'Gallery Listing';
+			}
+			
+			return $title;
+		}
+		
+		public function getGalleryList($path = '.', $level = 0){			
 			$ignore = array('cgi-bin', '.', '..', '_'); 
 			$dirArray = array();
 			$dh = @opendir(GALLERY_ROOT . '/' . $path); // Open the directory to the handle $dh 
@@ -28,6 +38,10 @@
 			// in a real life scenario this will be done through a db select command
 			$allGalleries = $this->getGalleryList();
 			return $allGalleries[$title];
+		}
+		
+		public function getGalleryFeature($gallery){
+			return $gallery;
 		}
 	}
 ?>

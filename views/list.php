@@ -1,8 +1,9 @@
 <?php
-	echo '<div id="gallery">';
+	echo '<div class="container">
+		<div id="gallery">';
 
 		echo "<h3>2012</h3>\n<ul>\n";
-		getDirectory('2012');
+		$this->model->getGalleryList('2012');
 		echo "</ul>\n";
 		
 		echo "<h3>2011</h3>\n<ul>\n";
@@ -30,5 +31,6 @@
 		echo "</ul>\n";
 		
 	// end gallery div
-	echo '</div>';
+	echo '	</div>
+	</div>';
 ?>

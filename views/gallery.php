@@ -1,3 +1,5 @@
 <?php
-	echo '<div id="gallery" class="go-shadow"></div>';
+	echo '<div class="container">
+		<div id="gallery" class="go-shadow"></div>
+	</div>';
 ?>
