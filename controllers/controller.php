@@ -11,8 +11,9 @@ class Controller {
 	public function invoke(){
 		// Extra settings
 		error_reporting(E_ALL);
-		ini_set("display_errors", 1);
-		ini_set("report_memleaks", 1);
+		ini_set("display_errors", true);
+		ini_set("report_memleaks", true);
+		ini_set('html_errors', true);
 		ini_set("memory_limit", "64M");
 						
 		// Constants
