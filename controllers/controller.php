@@ -6,7 +6,7 @@ class Controller {
 	
 	public function __construct(){
 		$this->model = new Model();
-	} 
+	}
 	
 	public function invoke(){
 		// Extra settings
@@ -17,30 +17,24 @@ class Controller {
 		ini_set("memory_limit", "64M");
 						
 		// Constants
-		define("GALLERY_ROOT", "images/gallery/");
+		define("GALLERY_ROOT", "/images/gallery/");
+		define('BASE_PATH',realpath('.'));
+		define('BASE_URL', dirname($_SERVER["SCRIPT_NAME"]));
 		
 		// Variables
 		$galleryURI = null;
+		$gallery = null;
+		$galleryDir = null;
 		//$galleryFeature = $this->model->getGalleryFeature('2012/Kidstock 2012');
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];
-			$galleryDir = dirname(__FILE__) . '/' . GALLERY_ROOT . '/' . base64_decode($gallery);
-			$galleryTitle = $this->model->getTitle();
+			$galleryDir = BASE_PATH . GALLERY_ROOT . base64_decode($gallery);
 			
 			include('views/header.php');
 			include('views/gallery.php');
 			include('views/footer.php');
-
-			if(!empty($_GET['t'])){
-				$galleryTitle = base64_decode($_GET['t']);
-			} else {
-				$galleryTitle = '';
-			}
 		} else {
-			$gallery = null;
-			$galleryDir = null;
-			$galleryTitle = $this->model->getTitle();
 			include('views/header.php');
 			include('views/list.php');
 			include('views/footer.php');

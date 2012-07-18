@@ -1,10 +1,20 @@
+<pre>
+<?php
+	echo "<h1>From header.php</h1>\ngallery = " . $gallery . "<br />";
+	echo "dir = " . $galleryDir . "<br />";
+	echo "path = " . BASE_PATH . "<br />";
+	echo "url = " . BASE_URL . "<br />";
+
+	print_r($this)
+?>
+</pre>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
    <head>
-      <title><?php echo $galleryTitle; ?> - Koert-Clark Photography</title>
+      <title><?php echo $this->model->getGalleryTitle(); ?> - Koert-Clark Photography</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +55,7 @@
          <div class="navbar-inner">
             <div class="container">
                <h1 class="brand"><a href="<?php echo $_SERVER['PHP_SELF'] ?>" title="Koert-Clark Photography">Koert-Clark Photography</a></h1>
-               <h2 id="galleryTitle" class="go-right"><?php echo $galleryTitle; ?></h2>
+               <h2 id="galleryTitle" class="go-right"><?php echo $this->model->getGalleryTitle(); ?></h2>
                <!--a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a-->
                <!--div class="nav-collapse">
                   <ul class="nav">

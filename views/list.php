@@ -1,36 +1,17 @@
-<?php
-	echo '<div class="container">
-		<div id="gallery">';
+<div class="container">
+	<div id="gallery">
+	<?php
+		$galleryArray = $this->model->getGalleryList();
+		foreach($galleryArray as $gallery){
+			echo "<h2>" . $gallery . "</h2>\n<ul>";
 
-		echo "<h3>2012</h3>\n<ul>\n";
-		$this->model->getGalleryList('2012');
-		echo "</ul>\n";
-		
-		echo "<h3>2011</h3>\n<ul>\n";
-		getDirectory('2011');
-		echo "</ul>\n";
-		
-		echo "<h3>2010</h3>\n<ul>\n";
-		getDirectory('2010');
-		echo "</ul>\n";
-		
-		echo "<h3>2009</h3>\n<ul>\n";
-		getDirectory('2009');
-		echo "</ul>\n";
-		
-		echo "<h3>2008</h3>\n<ul>\n";
-		getDirectory('2008');
-		echo "</ul>\n";
+			$dirArray = $this->model->getAlbumList($gallery);
+			foreach($dirArray as $directory){
+				echo "<li><a href=\"index.php?g=" . base64_encode($gallery ."/" . $directory) . "&t=" . base64_encode($directory) . "\">$directory</a></li>\n";
+			};
 
-		echo "<h3>2007</h3>\n<ul>\n";
-		getDirectory('2007');
-		echo "</ul>\n";
-		
-		echo "<h3>2006</h3>\n<ul>\n";
-		getDirectory('2006');
-		echo "</ul>\n";
-		
-	// end gallery div
-	echo '	</div>
-	</div>';
-?>
+			echo "</ul>";
+		}
+	?>
+	</div>
+</div>

@@ -3,8 +3,4 @@
 
 	$controller = new Controller();
 	$controller->invoke();
-
-	// Include functions
-	//include('./models/functions.php');
-
 ?>
