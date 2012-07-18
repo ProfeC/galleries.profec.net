@@ -1,13 +1,3 @@
-<pre>
-<?php
-	echo "<h1>From header.php</h1>\ngallery = " . $gallery . "<br />";
-	echo "dir = " . $galleryDir . "<br />";
-	echo "path = " . BASE_PATH . "<br />";
-	echo "url = " . BASE_URL . "<br />";
-
-	print_r($this)
-?>
-</pre>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
