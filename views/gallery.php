@@ -5,7 +5,7 @@
 <script type="text/javascript">
 	//<![CDATA[
 	<?php
-		$filesArray = $this->model->getImages($gallery, $galleryDir);
+		$filesArray = $this->model->getImages($galleryDir);
 		$fileCount = count($filesArray);
 		
 		echo "var imageData = [\n";

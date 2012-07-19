@@ -55,7 +55,7 @@
 			return $gallery;
 		}
 		
-		public function getImages($thisGallery, $thisDir){
+		public function getImages($thisDir){
 			$filesArray = array();
 			$dir = opendir($thisDir);
 			while (false !== ($file = readdir($dir))){

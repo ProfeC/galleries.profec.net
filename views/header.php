@@ -36,6 +36,8 @@
 
       <script src="scripts/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
       <script type="text/javascript" src="scripts/galleria/galleria-1.2.7.min.js"></script>
+      <script type="text/javascript" src="scripts/script.js"></script>
+      
    </head>
 	<body>
 
