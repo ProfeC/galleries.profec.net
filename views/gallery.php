@@ -10,7 +10,7 @@
 		
 		echo "var imageData = [\n";
 		for($i=0; $i<sizeof($filesArray); $i++){
-			$imagePath = BASE_PATH . GALLERY_ROOT . base64_decode($gallery) . "/" . $filesArray[$i];
+			$imagePath = BASE_PATH . "/" . GALLERY_ROOT . base64_decode($gallery) . "/" . $filesArray[$i];
 			$imageURL = GALLERY_ROOT . base64_decode($gallery) . "/" . $filesArray[$i];
 			$imageExif = exif_read_data($imagePath, 'ANY_TAG', true);
 			$imageTitle = $imageExif['FILE']['FileName'];

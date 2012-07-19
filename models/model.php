@@ -13,14 +13,14 @@
 			return $title;
 		}
 		
-		public function getAlbumList($path = '.'){			
+		public function getAlbumList($path = '.'){
 			$ignore = array('cgi-bin', '.', '..', '_'); 
 			$dirArray = array();
-			$dh = @opendir(BASE_PATH . GALLERY_ROOT . $path); // Open the directory to the handle $dh
+			$dh = @opendir(BASE_PATH . "/" . GALLERY_ROOT . $path); // Open the directory to the handle $dh
 			
 			while(false !== ($dir = readdir($dh))){ // Loop through the directory
 				if(!in_array($dir, $ignore)){ // Check that this directory is not to be ignored
-					if(is_dir(BASE_PATH . GALLERY_ROOT . "/$path/$dir")){ 
+					if(is_dir(BASE_PATH . "/" . GALLERY_ROOT . "/$path/$dir")){ 
 						$dirArray[] = $dir;
 					}
 				} 
@@ -32,14 +32,14 @@
 			return $dirArray;
 		}
 		
-		public function getGalleryList(){			
-			$ignore = array('cgi-bin', '.', '..', '_'); 
+		public function getGalleryList(){
+			$ignore = array('cgi-bin', '.', '..', '_');
 			$dirArray = array();
-			$dh = @opendir(BASE_PATH . GALLERY_ROOT); // Open the directory to the handle $dh
+			$dh = @opendir(BASE_PATH . "/" . GALLERY_ROOT); // Open the directory to the handle $dh
 
 			while(false !== ($dir = readdir($dh))){ // Loop through the directory
 				if(!in_array($dir, $ignore)){ // Check that this directory is not to be ignored
-					if(is_dir(BASE_PATH . GALLERY_ROOT . "/$dir")){ 
+					if(is_dir(BASE_PATH . "/" . GALLERY_ROOT . "/$dir")){ 
 						$dirArray[] = $dir;
 					}
 				}

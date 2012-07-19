@@ -10,14 +10,14 @@ class Controller {
 	
 	public function invoke(){
 		// Extra settings
-		error_reporting(E_ALL);
+		// error_reporting(E_ALL);
 		ini_set("display_errors", true);
 		ini_set("report_memleaks", true);
 		ini_set('html_errors', true);
 		ini_set("memory_limit", "64M");
 						
 		// Constants
-		define("GALLERY_ROOT", "/images/gallery/");
+		define("GALLERY_ROOT", "images/gallery/");
 		define('BASE_PATH',realpath('.'));
 		define('BASE_URL', dirname($_SERVER["SCRIPT_NAME"]));
 		
@@ -31,7 +31,7 @@ class Controller {
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];
-			$galleryDir = BASE_PATH . GALLERY_ROOT . base64_decode($gallery);
+			$galleryDir = (BASE_PATH . "/" . GALLERY_ROOT . base64_decode($gallery));
 			
 			include('views/header.php');
 			include('views/gallery.php');
