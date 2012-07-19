@@ -10,9 +10,9 @@ a:hover {color:#666}
 
 /* #gallery {margin-top:3%} */
 #gallery ul {margin-top:13px; -moz-columns:25em; -moz-column-gap:2em; -moz-column-rule:1px solid #444; /* Firefox */ -webkit-columns:25em; -webkit-column-gap:2em; -webkit-column-rule:1px solid #444; /* Safari and Chrome */ columns:25em; column-gap:2em; column-rule:1px solid #444}
-#gallery li {list-style-type:none; font-size:1.2em; line-height:1.3em}
-#gallery li.directory {display:block; margin:0; padding:3px;}
-#gallery li.directory img {margin:0 3px 0 0}
+#gallery li {list-style-type:none; font-size:1.3em}
+#gallery li.directory {display:block; margin:0; padding:0;}
+#gallery li.directory img {margin:0 3px 5px 0}
 #galleryTitle {padding:15px 15px 10px 15px; color:#f3f3f3}
 .galleria-container{background-color:#303030; border:1px solid #b6b6b6}
 
