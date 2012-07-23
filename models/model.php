@@ -69,7 +69,18 @@
 			
 			return $filesArray;
 		}
-
+		
+		public function getImageThumbnail($thisDir, $thisImage = 0){
+			// get the array of images for this directory
+			$imageArray = self::getImages($thisDir);
+			// get the specified image
+			$imageFile = $imageArray[$thisImage];
+			// get the exif_thumbnail if there is one...
+			$imageThumbnail = exif_thumbnail($thisDir . "/" . $imageFile, $width, $height, $imagetype);
+			//var_dump($imageThumbnail);
+			return $imageThumbnail;
+		}
+		
 		public function getSlideImages($thisDir){
 			$filesArray = array();
 			$dir = opendir(dirname(__FILE__) . '/' . $thisDir);

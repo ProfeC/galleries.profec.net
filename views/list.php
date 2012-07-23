@@ -14,7 +14,7 @@
 		foreach($dirArray as $directory){
 			// Get the list of images in the album so we can use one of them as an icon. These thumbnails should be resizde by the system.
 			$filesArray = $this->model->getImages(BASE_PATH . "/" . GALLERY_ROOT . $gallery . "/" . $directory);
-			echo "<li class=\"directory\" style=\"line-height:" . ($galleryListImageHeight - 5) . "px\"><a href=\"index.php?g=" . base64_encode($gallery ."/" . $directory) . "&t=" . base64_encode($directory) . "\"><img src=\"" . GALLERY_ROOT . $gallery ."/" . $directory . "/" . $filesArray[2] . "\" height=\"" . $galleryListImageHeight . "\" weight=\"" . $galleryListImageWidth . "\" alt=\"\" class=\"go-left\" />$directory</a></li>\n";
+			echo "<li class=\"directory\" style=\"line-height:" . ($galleryListImageHeight - 5) . "px\"><a href=\"index.php?g=" . base64_encode($gallery ."/" . $directory) . "&t=" . base64_encode($directory) . "\"><img src=\"" . GALLERY_ROOT . $gallery ."/" . $directory . "/" . $filesArray[0] . "\" height=\"" . $galleryListImageHeight . "\" weight=\"" . $galleryListImageWidth . "\" alt=\"\" class=\"go-left\" />$directory</a></li>\n";
 		};
 
 		echo "\t\t</ul>\n
@@ -23,3 +23,5 @@
 	?>
 	</div>
 </div>
+
+<!--// <br />"  . $this->model->getImageThumbnail(BASE_PATH . "/" . GALLERY_ROOT . $gallery . "/" . $directory, 0) . "-->
