@@ -74,10 +74,24 @@
 			// get the array of images for this directory
 			$imageArray = self::getImages($thisDir);
 			// get the specified image
-			$imageFile = $imageArray[$thisImage];
-			// get the exif_thumbnail if there is one...
-			$imageThumbnail = exif_thumbnail($thisDir . "/" . $imageFile, $width, $height, $imagetype);
-			//var_dump($imageThumbnail);
+			$imageFile = $thisDir . "/" . $imageArray[$thisImage];
+			
+			/* Attempt to open */
+			$imageThumbnail = imagecreatefromjpeg($imageFile);
+		
+			/* See if it failed */
+			if(!$imageThumbnail){
+				/* Create a black image */
+				$imageThumbnail  = imagecreatetruecolor(150, 30);
+				$bgc = imagecolorallocate($imageThumbnail, 255, 255, 255);
+				$tc  = imagecolorallocate($imageThumbnail, 0, 0, 0);
+		
+				imagefilledrectangle($imageThumbnail, 0, 0, 150, 30, $bgc);
+		
+				/* Output an error message */
+				imagestring($imageThumbnail, 1, 5, 5, 'Error loading ' . $imageFile, $tc);
+			}
+			
 			return $imageThumbnail;
 		}
 		

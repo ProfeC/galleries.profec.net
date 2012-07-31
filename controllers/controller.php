@@ -26,8 +26,8 @@ class Controller {
 		$gallery = null;
 		$galleryDir = null;
 		//$galleryFeature = $this->model->getGalleryFeature('2012/Kidstock 2012');
-		$galleryListImageHeight = 75;
-		$galleryListImageWidth = 75;
+		$galleryListImageHeight = 250;
+		$galleryListImageWidth = 250;
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];

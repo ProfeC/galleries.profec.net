@@ -9,10 +9,9 @@ a, a:visited, a:link {color:#333; text-decoration:none}
 a:hover {color:#666}
 
 /* #gallery {margin-top:3%} */
-#gallery ul {margin-top:13px; -moz-columns:25em; -moz-column-gap:2em; -moz-column-rule:1px solid #444; /* Firefox */ -webkit-columns:25em; -webkit-column-gap:2em; -webkit-column-rule:1px solid #444; /* Safari and Chrome */ columns:25em; column-gap:2em; column-rule:1px solid #444}
-#gallery li {list-style-type:none}
-#gallery li.directory {display:block; height:77px; width:auto; margin:0 0 13px 0; padding:0;}
-#gallery li.directory img {margin:0 5px 0 0; border:1px solid #666}
+#gallery .list {margin-top:13px; -moz-columns:25em; -moz-column-gap:2em; -moz-column-rule:1px solid #444; /* Firefox */ -webkit-columns:25em; -webkit-column-gap:2em; -webkit-column-rule:1px solid #444; /* Safari and Chrome */ columns:25em; column-gap:2em; column-rule:1px solid #444}
+#gallery p.directory {margin:0 0 15px 0; padding:0; width:auto; text-align:center}
+#gallery p.directory img {margin:0; padding:0; border:1px solid #666}
 #galleryTitle {padding:15px 15px 10px 15px; color:#f3f3f3}
 .galleria-container{background-color:#303030; border:1px solid #b6b6b6}
 
