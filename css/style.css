@@ -10,8 +10,8 @@ a:hover {color:#666}
 
 /* #gallery {margin-top:3%} */
 #gallery .list {margin-top:13px; -moz-columns:25em; -moz-column-gap:2em; -moz-column-rule:1px solid #444; /* Firefox */ -webkit-columns:25em; -webkit-column-gap:2em; -webkit-column-rule:1px solid #444; /* Safari and Chrome */ columns:25em; column-gap:2em; column-rule:1px solid #444}
-#gallery p.directory {margin:0 0 15px 0; padding:0; width:auto; text-align:center}
-#gallery p.directory img {margin:0; padding:0; border:1px solid #666}
+#gallery li.directory {margin:0 0 15px 0; padding:0; width:auto; text-align:left; list-style-type:none}
+#gallery li.directory img {margin:0 10px 0 0; padding:1px; border:1px solid #666}
 #galleryTitle {padding:15px 15px 10px 15px; color:#f3f3f3}
 .galleria-container{background-color:#303030; border:1px solid #b6b6b6}
 
@@ -22,13 +22,13 @@ a:hover {color:#666}
 h1.brand {font-size:3em !important; font-weight:900; font-style:italic; color:#f3f3f3; text-shadow:#e2e2e2 1px 3px 5px}
 
 .go-left{float:left; clear:left;}
-.go-right{	float:right; clear:right}
+.go-right{float:right; clear:right}
 .go-clear {clear:both}
 .go-shadow {-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:5px 7px 5px 2px #666; -webkit-box-shadow:5px 7px 5px 2px #666; box-shadow:5px 7px 5px 2px #666}
-.text-center{	margin: 0 auto; text-align:center}
+.text-center{margin: 0 auto; text-align:center}
 .text-bold{ font-weight:bold;}
 .text-italic{ font-style:italic;}
-.text-block{	display:block;}
-.text-right{	text-align:right;}
+.text-block{display:block;}
+.text-right{text-align:right;}
 .text-left{ text-align:left;}
 .copyright {height:25px; background-color:#bbb; margin-bottom:20px; padding-top:8px}

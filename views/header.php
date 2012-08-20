@@ -14,7 +14,6 @@
          body {padding-top:100px; padding-bottom:40px}
       </style>
       <link rel="stylesheet" href="css/bootstrap-responsive.css">
-		<link rel="stylesheet" href="scripts/agile-carousel/agile_carousel.css">
 		<link rel="stylesheet" href="css/style.css" media="screen" />
       <script src="https://www.google.com/jsapi?key=ABQIAAAAej7hXzR0rP7OpeEWXDbZwRSs398M-qenCUxXFsvB2vyWwj3LVhRwpiLOd8BN-S9sJfnM8ElmmEFGEg" type="text/javascript"></script>
       <script language="Javascript" type="text/javascript">

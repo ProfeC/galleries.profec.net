@@ -5,6 +5,7 @@
 </div>
 
 <!-- Add script for slideshow -->
+<!--
 <script type="text/javascript" src="scripts/agile-carousel/agile_carousel.alpha.js"></script>
 <script type="text/javascript">
 	<?php getSlideImages($galleryFeature); ?>
@@ -22,3 +23,4 @@
 		});
 	});
 </script>
+-->

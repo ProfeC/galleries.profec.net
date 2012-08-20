@@ -6,6 +6,7 @@ class Controller {
 	
 	public function __construct(){
 		$this->model = new Model();
+		$this->image = new Image();
 	}
 	
 	public function invoke(){
@@ -18,6 +19,7 @@ class Controller {
 						
 		// Constants
 		define("GALLERY_ROOT", "images/gallery/");
+		define("THUMBNAIL_ROOT", "images/thumbs");
 		define('BASE_PATH',realpath('.'));
 		define('BASE_URL', dirname($_SERVER["SCRIPT_NAME"]));
 		
@@ -26,8 +28,8 @@ class Controller {
 		$gallery = null;
 		$galleryDir = null;
 		//$galleryFeature = $this->model->getGalleryFeature('2012/Kidstock 2012');
-		$galleryListImageHeight = 250;
-		$galleryListImageWidth = 250;
+		$galleryListImageHeight = 100;
+		$galleryListImageWidth = 150;
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];
@@ -41,16 +43,6 @@ class Controller {
 			include('views/list.php');
 			include('views/footer.php');
 		}
-
-		/*if (!isset($_GET['gallery'])){
-			// no gallery is requested, we'll show a list of all available books
-			$galleries = $this->model->getGalleryList();
-			include 'view/list.php';
-		} else {
-			// show the requested book
-			$gallery = $this->model->getGallery($_GET['gallery']);
-			include 'view/gallery.php';
-		}*/
 	}
 }
 ?>
