@@ -97,7 +97,8 @@
 		
 		public function getSlideImages($thisDir){
 			$filesArray = array();
-			$dir = opendir(dirname(__FILE__) . '/' . $thisDir);
+            $galleryDir = 'images/gallery/';
+			$dir = opendir($galleryDir . $thisDir);
 			while (false !== ($file = readdir($dir))){
 				$extension = strtolower(substr(strrchr($file, '.'), 1));
 				if($extension == 'jpg'){
@@ -108,25 +109,22 @@
 			sort($filesArray, SORT_STRING);
 			$fileCount = count($filesArray);
 
-			echo "var slideImageData = [\n";
 			for($i=0; $i<sizeof($filesArray); $i++){
-				$image = $thisDir . "/" .$filesArray[$i];
+				$image = $galleryDir . $thisDir . "/" .$filesArray[$i];
 				$imageExif = exif_read_data($image, 'ANY_TAG', true);
-				//print_r($imageExif);
+                // print_r($imageExif);
 	         $imageTitle = $imageExif['FILE']['FileName'];
 				$imageDescription = $imageExif['EXIF']['ExposureTime'] . 's @ ' .$imageExif['COMPUTED']['ApertureFNumber'] . ' on ISO ' . $imageExif['EXIF']['ISOSpeedRatings'];
-				// echo "\t\t{\"image\":\"$image\", \"title\":\"$imageTitle\", \"description\":\"$imageDescription\", \"link\":null}";
-				echo "\t\t{\n\t\t\t'content':'<div class=\"slide_inner\"><img class=\"photo\" src=\"" . $image . "\" alt=\"" . $imageTitle . "\" /></div>'\n}";
-
-				/*
-				"content": "<div class='slide_inner'><a target='_blank' class='photo_link' href='#'><img class='photo' src='images/banner_bike.jpg' alt='Bike'></a><a target='_blank' class='caption' href='#'>Sample Carousel Pic Goes Here And The Best Part is that...</a></div>",
-			    "content_button": "<div class='thumb'><img src='images/f2_thumb.jpg' alt='bike is nice'></div><p>Agile Carousel Place Holder</p>"
-					*/
+				
+                // echo "\t\t{\"image\":\"$image\", \"title\":\"$imageTitle\", \"description\":\"$imageDescription\", \"link\":null}";
+                
+				echo "\t\t<img class=\"photo\" src=\"" . $image . "\" alt=\"" . $imageTitle . "\" data-caption=\"caption" . $i . "\" />";
+                
 				if($fileCount > 1){
-					echo ",\n";
+					echo "\n";
 					$fileCount--;
 				} else {
-					echo "\n\t\t\t\t\t\t];\n";
+					echo "\n";
 				}
 			}		
 		} // end getSlideImages();

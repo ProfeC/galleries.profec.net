@@ -1,20 +1,28 @@
-<div class="container">
-	<div id="gallery">
+<div id="pageTitle" class="contain-to-grid">
+    <div class="row">
+        <div class="twelve columns">
+            <h2><?php echo $this->model->getGalleryTitle(); ?></h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+	<div id="list" class="twelve columns">
 	<?php
 	// Get the list of galleries
 	$galleryArray = $this->model->getGalleryList();
 	foreach($galleryArray as $gallery){
-		echo "\t<h2>" . $gallery . "</h2>
+		echo "\t<h3 class=\"subheader\">" . $gallery . "</h3>
 		\n";
-		echo "\t\t\t<ul class=\"list\">";
+		echo "\t\t\t<ul class=\"block-grid three-up\">";
 		
 		// Get the list of albums in each gallery found
 		$dirArray = $this->model->getAlbumList($gallery);
 		
 		foreach($dirArray as $directory){
 			$imageThumbnail = $this->image->getThumbnail(GALLERY_ROOT . $gallery ."/" . $directory, 0, $galleryListImageWidth, $galleryListImageHeight);
+            $imageLink = "index.php?g=" . base64_encode($gallery ."/" . $directory) . "&t=" . base64_encode($directory);
 			
-			echo "<li class=\"directory\" style=\"line-height:"  . ($galleryListImageHeight - 5) . "px\"><a href=\"index.php?g=" . base64_encode($gallery ."/" . $directory) . "&t=" . base64_encode($directory) . "\"><img class=\"go-left\" src=\"" . $imageThumbnail . "\" width=\"" . $galleryListImageWidth . "\" height=\"" . $galleryListImageHeight . "\" alt=\"\" />$directory</a></li>\n";
+			echo "<li><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" width=\"" . $galleryListImageWidth . "\"  height=\"" . $galleryListImageHeight . "\" alt=\"\" /></a><h5><a href=\"" . $imageLink . "\">$directory</a></h5></li>\n";
 		};
 
 		echo "\t\t</ul>\n

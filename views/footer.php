@@ -1,17 +1,28 @@
-      <script src="scripts/libs/bootstrap/bootstrap.min.js"></script>
-      <script src="scripts/plugins.js"></script>
-      <script src="scripts/script.js"></script>
+        <script language="Javascript" type="text/javascript">
+            //<![CDATA[
+                //google.load("jquery", "1");
+                //google.load("jqueryui", "1");
+                google.load("webfont", "1");
 
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-524508-1']);
-			_gaq.push(['_trackPageview']);
+                google.setOnLoadCallback(function(){
+                    WebFont.load({
+                        google:{
+                            //families:['Exo::latin']
+                            families:['Open Sans::latin']
+                        }
+                    });
+                });
+            //]]>
+        </script>
+  
+        <!-- Included JS Files (Compressed) -->
+        <script src="javascripts/jquery.js"></script>
+        <script src="/javascripts/foundation/foundation.min.js"></script>
+  
+        <!-- Initialize JS Plugins -->
+        <script src="/javascripts/foundation/app.js"></script>
 
-			(function() {
-				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-			})();
-		</script>
+        <!-- <script src="javascripts/plugins.js"></script> -->
+        <script src="javascripts/script.js"></script>
 	</body>
 </html>

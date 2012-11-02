@@ -27,9 +27,9 @@ class Controller {
 		$galleryURI = null;
 		$gallery = null;
 		$galleryDir = null;
-		//$galleryFeature = $this->model->getGalleryFeature('2012/Kidstock 2012');
-		$galleryListImageHeight = 100;
-		$galleryListImageWidth = 100;
+		$galleryFeature = $this->model->getGalleryFeature('2012\/3');
+		$galleryListImageHeight = 150;
+		$galleryListImageWidth = 300;
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];
@@ -39,7 +39,9 @@ class Controller {
 			include('views/gallery.php');
 			include('views/footer.php');
 		} else {
+            // this is the index
 			include('views/header.php');
+			//include('views/carousel.php');
 			include('views/list.php');
 			include('views/footer.php');
 		}

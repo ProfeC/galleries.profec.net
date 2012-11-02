@@ -1,0 +1,61 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Featured Image Slider
+:: Gallery Styles
+:: List Styles
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body {font-family:'Open Sans', sans-serif; color:#333; background-color:#fcfcfc}
+a, a:visited, a:link {color:#333; text-decoration:none}
+a:hover {color:#666}
+#siteTitle .contain-to-grid {background-color:#222}
+#pageTitle .contain-to-grid {background:#d00}
+/*
+img {border:0}
+.navbar {color:#fff; background-color:#f3f3f3 !important}
+.navbar a, .navbar a:visited, .navbar a:link {color:#fff}
+.navbar a:hover {color:#ccc}
+
+h1.brand {font-size:3em !important; font-weight:900; font-style:italic; color:#f3f3f3; text-shadow:#e2e2e2 1px 3px 5px}
+*/
+
+.go-left{float:left; clear:left;}
+.go-right{float:right; clear:right}
+.go-clear {clear:both}
+.go-shadow {-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; -moz-box-shadow:5px 7px 5px 2px #666; -webkit-box-shadow:5px 7px 5px 2px #666; box-shadow:5px 7px 5px 2px #666}
+.text-center{margin: 0 auto; text-align:center}
+.text-bold{ font-weight:bold;}
+.text-italic{ font-style:italic;}
+.text-block{display:block;}
+.text-right{text-align:right;}
+.text-left{ text-align:left;}
+.copyright {height:25px; background-color:#bbb; margin-bottom:20px; padding-top:8px}
+
+/* -----------------------------------------
+   Featured Image Slider
+----------------------------------------- */
+#featured {margin-top:25px; padding:13px; background:url(spinner.gif) center center #f4f4f4; height:250px;}
+#featured img {display: none;}
+#featured.orbit {background: none;}
+#featured.orbit img {display: block;}
+
+/* -----------------------------------------
+   Gallery Styles
+----------------------------------------- */
+#gallery img {height:200px !important}
+#gallery .list {margin-top:13px; -moz-columns:25em; -moz-column-gap:2em; -moz-column-rule:1px solid #444; /* Firefox */ -webkit-columns:25em; -webkit-column-gap:2em; -webkit-column-rule:1px solid #444; /* Safari and Chrome */ columns:25em; column-gap:2em; column-rule:1px solid #444}
+#gallery li.directory {margin:0 0 15px 0; padding:0; width:auto; text-align:left; list-style-type:none}
+#galleryTitle {padding:15px 15px 10px 15px; color:#f3f3f3}
+
+/* -----------------------------------------
+   List Styles
+----------------------------------------- */
+#list img {height:200px !important}
