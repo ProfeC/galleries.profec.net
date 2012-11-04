@@ -6,7 +6,7 @@
                 echo "<div class=\"panel radius\">\n\t" . $galleryDescription . "\n</div>";
             }
         ?>
-        <ul class="block-grid three-up" data-clearing>
+        <ul class="block-grid five-up mobile" data-clearing>
         	<?php
         		$filesArray = $this->model->getImages($galleryDir);
         		$fileCount = count($filesArray);

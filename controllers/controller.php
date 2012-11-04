@@ -28,8 +28,8 @@ class Controller {
 		$gallery = null;
 		$galleryDir = null;
 		$galleryFeature = $this->model->getGalleryFeature('2012\/3');
-		$galleryListImageHeight = 150;
-		$galleryListImageWidth = 275;
+		$galleryListImageHeight = 200;
+		$galleryListImageWidth = 300;
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];
