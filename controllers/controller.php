@@ -29,7 +29,7 @@ class Controller {
 		$galleryDir = null;
 		$galleryFeature = $this->model->getGalleryFeature('2012\/3');
 		$galleryListImageHeight = 150;
-		$galleryListImageWidth = 300;
+		$galleryListImageWidth = 275;
 
 		if(!empty($_GET['g'])){
 			$gallery = $_GET['g'];

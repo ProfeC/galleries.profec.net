@@ -15,6 +15,7 @@ _gaq.push(['_trackPageview']);
 // End Google Analytics
 
 // Start of Woopra Code
+/*
 function woopraReady(tracker) {
 	tracker.setDomain('profec.net');
 	tracker.setIdleTimeout(600000);
@@ -30,4 +31,5 @@ function woopraReady(tracker) {
 	var ssc = document.getElementsByTagName('script')[0];
 	ssc.parentNode.insertBefore(wsc, ssc);
 })();
+*/
 // End of Woopra Code

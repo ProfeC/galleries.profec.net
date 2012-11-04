@@ -128,5 +128,15 @@
 				}
 			}		
 		} // end getSlideImages();
+		
+		public function getDescription($thisDir){
+			if(file_exists($thisDir . "/description.inc")){
+			    $description = file_get_contents($thisDir . "/description.inc");
+			} else {
+			    $description = '';
+			}
+            
+            return $description;
+		}
 	}
 ?>

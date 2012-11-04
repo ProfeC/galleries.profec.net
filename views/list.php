@@ -1,12 +1,5 @@
-<div id="pageTitle" class="contain-to-grid">
-    <div class="row">
-        <div class="twelve columns">
-            <h2><?php echo $this->model->getGalleryTitle(); ?></h2>
-        </div>
-    </div>
-</div>
-<div class="row">
-	<div id="list" class="twelve columns">
+<div id="content" class="row">
+	<div id="galleryList" class="twelve columns">
 	<?php
 	// Get the list of galleries
 	$galleryArray = $this->model->getGalleryList();
@@ -21,8 +14,11 @@
 		foreach($dirArray as $directory){
 			$imageThumbnail = $this->image->getThumbnail(GALLERY_ROOT . $gallery ."/" . $directory, 0, $galleryListImageWidth, $galleryListImageHeight);
             $imageLink = "index.php?g=" . base64_encode($gallery ."/" . $directory) . "&t=" . base64_encode($directory);
-			
-			echo "<li><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" width=\"" . $galleryListImageWidth . "\"  height=\"" . $galleryListImageHeight . "\" alt=\"\" /></a><h5><a href=\"" . $imageLink . "\">$directory</a></h5></li>\n";
+            
+            // this should be from the gallery model, not model model.
+            $galleryDescription = $this->model->getDescription(GALLERY_ROOT . $gallery ."/" . $directory);
+            
+			echo "<li><div class=\"panel radius\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" width=\"" . $galleryListImageWidth . "\"  height=\"" . $galleryListImageHeight . "\" alt=\"\" /></a><h5><a href=\"" . $imageLink . "\">$directory</a></h5>" . $galleryDescription . "</div></li>\n";
 		};
 
 		echo "\t\t</ul>\n

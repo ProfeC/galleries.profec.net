@@ -24,10 +24,25 @@
 
       <!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-      <div class="contain-to-grid">
-          <div id="siteTitle" class="row">
+      <div id="siteTitle" class="contain-to-grid">
+          <div class="row">
               <div class="twelve columns">
                   <h1><a href="<?php echo $_SERVER['PHP_SELF'] ?>" title="Koert-Clark Photography">Koert-Clark Photography</a></h1>
               </div>
           </div>
       </div>
+      <div id="siteNav">
+          <div class="row">
+              <div class="twelve columns">
+                  <?php //include('views/navigation.php'); ?>
+              </div>
+          </div>
+      </div>
+      <div id="pageTitle" class="contain-to-grid">
+          <div class="row">
+              <div class="twelve columns">
+                  <h2 class="subheader"><?php echo $this->model->getGalleryTitle(); ?></h2>
+              </div>
+          </div>
+      </div>
+      <div id="content">

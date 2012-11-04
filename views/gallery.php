@@ -1,10 +1,11 @@
 <div class="row">
-    <div class="twelve columns">
-        <h2><?php echo $this->model->getGalleryTitle(); ?></h2>
-    </div>
-</div>
-<div class="row">
     <div id="gallery" class="twelve columns">
+        <?php
+            $galleryDescription = $this->model->getDescription($galleryDir); // this should be from the gallery model, not model model.
+            if($galleryDescription != ''){
+                echo "<div class=\"panel radius\">\n\t" . $galleryDescription . "\n</div>";
+            }
+        ?>
         <ul class="block-grid three-up" data-clearing>
         	<?php
         		$filesArray = $this->model->getImages($galleryDir);
@@ -17,7 +18,7 @@
         			$imageTitle = $imageExif['FILE']['FileName'];
         			$imageDescription = $imageExif['EXIF']['ExposureTime'] . 's @ ' .$imageExif['COMPUTED']['ApertureFNumber'] . ' on ISO ' . $imageExif['EXIF']['ISOSpeedRatings']; // TODO: Check to see if there are values for these keys and display them if they are not empty.
 			
-        			echo "<li><a href=\"$imageURL\" class=\"th\"><image src=\"$imageURL\" alt=\"$imageTitle\" data-caption=\"$imageDescription\" width=\"$galleryListImageWidth\" height=\"$galleryListImageHeight\" /></a></li>";
+        			echo "<li><a href=\"$imageURL\" class=\"th\"><image src=\"$imageURL\" alt=\"$imageTitle\" data-caption=\"$imageDescription\" /></a></li>";
                       
         			if($fileCount > 1){
         				echo "\n";
@@ -30,5 +31,3 @@
         </ul>
     </div>
 </div>
-
-
