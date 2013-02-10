@@ -1,0 +1,189 @@
+/* Artfully masterminded by ZURB & ProfeC!  */
+
+/* -------------------------------------------------- 
+Table of Contents
+-----------------------------------------------------
+:: External Fonts
+:: Shared Styles
+:: Featured Image Slider
+:: Gallery Styles
+:: List Styles
+*/
+
+/* -----------------------------------------
+External Fonts
+----------------------------------------- */
+/*@import url(http://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans);*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed|Open+Sans);*/
+@import url(http://fonts.googleapis.com/css?family=Cabin|Stoke);
+
+
+
+/* -----------------------------------------
+Shared Styles
+----------------------------------------- */
+body {
+    font-family: 'Cabin', sans-serif;
+    color: #333;
+    background-color: #d3d2d1
+}
+a, a:visited, a:link {
+    color: #333;
+    text-decoration: none
+}
+a:hover {
+    color: #666
+}
+h1, h2, h3, h4, h5, h6{
+    font-family:'Stoke', serif;
+}
+#siteTitle, #siteTitle, #siteTitle a, #siteTitle a:visited, #siteTitle a:hover {
+    background-color: #232323;
+    color: #f2f2f2;
+    /*font-style: italic;
+    font-weight:700;*/
+}
+#siteNav {
+    background: #333;
+    border-top: 1px solid #383838;
+    border-bottom: 1px solid #444;
+    color: #e2e2e2
+}
+#pageTitle {
+    background: #d7d7d7;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #bababa
+}
+#content {
+    background: #d2d1d0 repeat-x top left;
+    background: -webkit-gradient(linear, 50% 0%, 50% 500, color-stop(0%, #e3e3e2), color-stop(100%, #d2d1d0));
+    background: -webkit-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: -moz-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: -o-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+}
+#footer {
+    background: #333;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #383838;
+    color: #e2e2e2;
+    /*padding:30px 0;*/
+    height:13px;
+    overflow:hidden;
+}
+#pageClose {
+    background: #232323;
+    border-top: 1px solid #383838;
+    color: #f2f2f2;
+    /*padding:13px 0;*/
+    height:13px;
+    overflow:hidden;
+}
+
+/*
+img {
+    border: 0
+}
+.navbar {
+    color: #fff;
+    background-color: #f3f3f3 !important
+}
+.navbar a, .navbar a:visited, .navbar a:link {
+    color: #fff
+}
+.navbar a:hover {
+    color: #ccc
+}
+*/
+
+.go-left {
+    float: left;
+    clear: left;
+}
+.go-right {
+    float: right;
+    clear: right
+}
+.go-clear {
+    clear: both
+}
+.go-shadow {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 5px 7px 5px 2px #666;
+    -webkit-box-shadow: 5px 7px 5px 2px #666;
+    box-shadow: 5px 7px 5px 2px #666
+}
+.text-center {
+    margin: 0 auto;
+    text-align: center
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-italic {
+    font-style: italic;
+}
+.text-block {
+    display: block;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.copyright {
+    height: 25px;
+    background-color: #bbb;
+    margin-bottom: 20px;
+    padding-top: 8px
+}
+
+/* -----------------------------------------
+Featured Image Slider
+----------------------------------------- */
+#featured {
+    margin-top: 25px;
+    padding: 13px;
+    /*background: url(spinner.gif) center center #f4f4f4;*/
+    height: 250px;
+}
+#featured img {
+    display: none;
+}
+#featured.orbit {
+    background: none;
+}
+#featured.orbit img {
+    display: block;
+}
+
+/* -----------------------------------------
+Gallery Styles
+----------------------------------------- */
+#gallery {
+    padding-top: 15px;
+}
+#gallery ul[data-clearing].block-grid > li {
+    height: 200px;
+    overflow: hidden;
+    margin: 0 0 13px 0
+}
+.clearing-assembled .clearing-container ul[data-clearing] li img {
+    max-width:150px !important;
+    max-height:100%;
+}
+/* #gallery .clearing-container .carousel ul[data-clearing].block-grid > li {
+    height: 100px;
+    overflow: visible
+}
+*/
+
+/* -----------------------------------------
+Gallery List Styles
+----------------------------------------- */
+#galleryList img {
+    height: 200px !important
+}
