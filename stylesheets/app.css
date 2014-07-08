@@ -1,43 +1,14 @@
-@import "settings";
-@import "foundation";
+/* Artfully masterminded by ZURB & ProfeC!  */
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switch",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+/* -------------------------------------------------- 
+Table of Contents
+-----------------------------------------------------
+:: External Fonts
+:: Shared Styles
+:: Featured Image Slider
+:: Gallery Styles
+:: List Styles
+*/
 
 /* -----------------------------------------
 External Fonts
@@ -54,24 +25,16 @@ Shared Styles
 body {
     font-family: 'Cabin', sans-serif;
     color: #333;
-//    background-color: #d3d2d1
+    background-color: #d3d2d1
 }
-a, 
-a:visited, 
-a:link {
+a, a:visited, a:link {
     color: #333;
     text-decoration: none
 }
 a:hover {
     color: #666
 }
-
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6 {
+h1, h2, h3, h4, h5, h6{
     font-family:'Stoke', serif;
 }
 #siteTitle, #siteTitle, #siteTitle a, #siteTitle a:visited, #siteTitle a:hover {
@@ -92,14 +55,13 @@ h6 {
     border-bottom: 1px solid #bababa
 }
 #content {
-//    background: #d2d1d0 repeat-x top left;
-//    background: -webkit-gradient(linear, 50% 0%, 50% 500, color-stop(0%, #e3e3e2), color-stop(100%, #d2d1d0));
-//    background: -webkit-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
-//    background: -moz-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
-//    background: -o-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
-//    background: linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: #d2d1d0 repeat-x top left;
+    background: -webkit-gradient(linear, 50% 0%, 50% 500, color-stop(0%, #e3e3e2), color-stop(100%, #d2d1d0));
+    background: -webkit-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: -moz-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: -o-linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
+    background: linear-gradient(#e3e3e2 0%,#d2d1d0 500px);
 }
-
 #footer {
     background: #333;
     border-top: 1px solid #444;
@@ -109,7 +71,6 @@ h6 {
     height:13px;
     overflow:hidden;
 }
-
 #pageClose {
     background: #232323;
     border-top: 1px solid #383838;
@@ -199,12 +160,9 @@ Featured Image Slider
     display: block;
 }
 
-/* 
- * -----------------------------------------
- *  Gallery Styles
- * -----------------------------------------
- */
- 
+/* -----------------------------------------
+Gallery Styles
+----------------------------------------- */
 #gallery {
     padding-top: 15px;
 }
@@ -214,7 +172,7 @@ Featured Image Slider
     margin: 0 0 13px 0
 }
 .clearing-assembled .clearing-container ul[data-clearing] li img {
-    max-width:150px;
+    max-width:150px !important;
     max-height:100%;
 }
 /* #gallery .clearing-container .carousel ul[data-clearing].block-grid > li {
@@ -227,5 +185,5 @@ Featured Image Slider
 Gallery List Styles
 ----------------------------------------- */
 #galleryList img {
-    height: 200px;
+    height: 200px !important
 }

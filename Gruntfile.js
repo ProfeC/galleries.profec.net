@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                 stripBanners: false,
             },
             src: [
-                'bower_components/foundation/js/vendor/fastclick.js',
+                'bower_components/fastclick/lib/fastclick.js',
                 'bower_components/foundation/js/foundation.min.js'
             ],
             dest: '<%= dirs.scripts.dest %>/frameworks.min.js'
@@ -105,7 +105,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'scss',
                 src: ['*.scss', '!_*.scss'],
-                dest: 'style',
+                dest: '<%= dirs.style.dest %>',
                 ext: '.css'
             }]
         },
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'scss',
                 src: ['*.scss', '!_*.scss'],
-                dest: 'style',
+                dest: '<%= dirs.style.dest %>',
                 ext: '.css'
             }]
         }
@@ -172,12 +172,17 @@ module.exports = function(grunt) {
 
 
     watch: {
-      grunt: { files: ['Gruntfile.js'] },
+        grunt: { files: ['Gruntfile.js'] },
 
-      sass: {
-        files: 'scss/**/*.scss',
-        tasks: ['sass']
-      }
+        sass: {
+            files: '<%= dirs.style.src %>/**/*.scss',
+            tasks: ['sass']
+        },
+
+        scripts: {
+            files: '<%= dirs.scripts.src %>/*.js',
+            tasks: ['clean:scripts', 'concat:scripts_dev', 'uglify:dev']
+        }
     }
   });
 

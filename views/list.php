@@ -1,12 +1,12 @@
-<div id="content" class="row">
-	<div id="galleryList" class="twelve columns">
+<div class="row">
+	<div id="galleryList" class="small-12 columns">
 	<?php
 	// Get the list of galleries
 	$galleryArray = $this->model->getGalleryList();
 	foreach($galleryArray as $gallery){
 		echo "\t<h3 class=\"subheader\">" . $gallery . "</h3>
 		\n";
-		echo "\t\t\t<ul class=\"block-grid three-up mobile\">";
+		echo "\t\t\t<ul class=\"small-block-grid-3\">";
 		
 		// Get the list of albums in each gallery found
 		$dirArray = $this->model->getAlbumList($gallery);
@@ -18,7 +18,7 @@
             // this should be from the gallery model, not model model.
             $galleryDescription = $this->model->getDescription(GALLERY_ROOT . $gallery ."/" . $directory);
             
-			echo "<li><div class=\"panel radius\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" alt=\"\" class=\"text-center\" /></a><h5><a href=\"" . $imageLink . "\">$directory</a></h5>" . $galleryDescription . "</div></li>\n";
+			echo "<li><div class=\"panel radius text-center\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" alt=\"\" class=\"text-center\" /></a><h4 class=\"subheader\"><a href=\"" . $imageLink . "\">$directory</a></h4>" . $galleryDescription . "</div></li>\n";
 		};
 
 		echo "\t\t</ul>\n";

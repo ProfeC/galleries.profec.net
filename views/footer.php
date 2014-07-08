@@ -1,14 +1,14 @@
         </div>
         <div id="footer" class="contain-to-grid">
             <div class="row">
-                <div class="small-12 column">
+                <div class="small-12 columns">
                     <p>&nbsp;</p>
                 </div>
             </div>
         </div>
         <div id="pageClose">
             <div class="row">
-                <div class="small-12 column">
+                <div class="small-12 columns">
                     <p>&nbsp;</p>
                 </div>
             </div>
@@ -34,8 +34,8 @@
   
         <!-- Included JS Files (Compressed) -->
         <script src="js/jquery.min.js"></script>
-        <script src="/js/foundation.min.js"></script>
-        <script src="js/app.js"></script>
+        <script src="js/frameworks.min.js"></script>
+        <script src="js/app.min.js"></script>
         <!-- <script src="js/plugins.js"></script> -->
 	</body>
 </html>

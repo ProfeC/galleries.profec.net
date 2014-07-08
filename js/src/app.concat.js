@@ -1,7 +1,7 @@
 /*!
 *
 * ProfeC.net Photo Gallery Development JavaScripts
-* Generated: 2014-07-07 @ 22:58:00
+* Generated: 2014-07-08 @ 07:45:19
 *
 */
 
@@ -20,6 +20,15 @@ _gaq.push(['_trackPageview']);
 	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 // End Google Analytics
+
+var container = document.querySelector('#masonry');
+var msnry = new Masonry( container, {
+  // options...
+  itemSelector: '.item',
+  columnWidth: 200,
+  gutter: 13
+});
+
 // Start of Woopra Code
 /*
 function woopraReady(tracker) {
