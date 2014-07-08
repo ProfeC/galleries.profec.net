@@ -1,0 +1,8 @@
+{
+  "name": "profecnet-photogallery",
+  "title": "ProfeC.net Photo Gallery",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "font-awesome": "FortAwesome/Font-Awesome"
+  }
+}

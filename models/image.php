@@ -14,7 +14,7 @@ class Image{
 	}
 	*/
 	
-	public function getThumbnail($directory, $imageID = 0, $thumbWidth, $thumbHeight){
+	public static function getThumbnail($directory, $imageID = 0, $thumbWidth, $thumbHeight){
 		// Reference: http://stackoverflow.com/questions/7393319/resize-images-with-php
 		$imageArray = model::getImages($directory);
 		$originalFile = $directory . "/" . $imageArray[$imageID];

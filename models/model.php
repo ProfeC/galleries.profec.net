@@ -3,7 +3,7 @@
 	include_once("models/image.php");
 	
 	class Model {
-		public function getGalleryTitle(){
+		public static function getGalleryTitle(){
 			if(!empty($_GET['t'])){
 				$title = base64_decode($_GET['t']);
 			} else {
@@ -13,7 +13,7 @@
 			return $title;
 		}
 		
-		public function getAlbumList($path = '.'){
+		public static function getAlbumList($path = '.'){
 			$ignore = array('cgi-bin', '.', '..', '_'); 
 			$dirArray = array();
 			$dh = @opendir(BASE_PATH . "/" . GALLERY_ROOT . $path); // Open the directory to the handle $dh
@@ -32,7 +32,7 @@
 			return $dirArray;
 		}
 		
-		public function getGalleryList(){
+		public static function getGalleryList(){
 			$ignore = array('cgi-bin', '.', '..', '_');
 			$dirArray = array();
 			$dh = @opendir(BASE_PATH . "/" . GALLERY_ROOT); // Open the directory to the handle $dh
@@ -51,11 +51,11 @@
 			return $dirArray;
 		}
 		
-		public function getGalleryFeature($gallery){
+		public static function getGalleryFeature($gallery){
 			return $gallery;
 		}
 		
-		public function getImages($thisDir){
+		public static function getImages($thisDir){
 			$filesArray = array();
 			$dir = opendir($thisDir);
 			while (false !== ($file = readdir($dir))){
@@ -70,7 +70,7 @@
 			return $filesArray;
 		}
 		
-		public function getImageThumbnail($thisDir, $thisImage = 0){
+		public static function getImageThumbnail($thisDir, $thisImage = 0){
 			// get the array of images for this directory
 			$imageArray = self::getImages($thisDir);
 			// get the specified image
@@ -95,7 +95,7 @@
 			return $imageThumbnail;
 		}
 		
-		public function getSlideImages($thisDir){
+		public static function getSlideImages($thisDir){
 			$filesArray = array();
             $galleryDir = 'images/gallery/';
 			$dir = opendir($galleryDir . $thisDir);
@@ -129,7 +129,7 @@
 			}		
 		} // end getSlideImages();
 		
-		public function getDescription($thisDir){
+		public static function getDescription($thisDir){
 			if(file_exists($thisDir . "/description.inc")){
 			    $description = file_get_contents($thisDir . "/description.inc");
 			} else {
