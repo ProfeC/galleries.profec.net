@@ -223,9 +223,24 @@ Featured Image Slider
 }
 */
 
+.brick {
+    height: 150px;
+    width: 150px;
+
+    &.medium {
+        height: 225px;
+        width: 225px;
+    }
+
+    &.large {
+        height: 300px;
+        width: 300px;
+    }
+}
+
 /* -----------------------------------------
 Gallery List Styles
 ----------------------------------------- */
-#galleryList img {
-    height: 200px;
-}
+//#galleryList img {
+//    height: 200px;
+//}

@@ -35,7 +35,7 @@
         <!-- Included JS Files (Compressed) -->
         <script src="js/jquery.min.js"></script>
         <script src="js/frameworks.min.js"></script>
+        <script src="js/plugins.min.js"></script>
         <script src="js/app.min.js"></script>
-        <!-- <script src="js/plugins.js"></script> -->
 	</body>
 </html>

@@ -6337,9 +6337,19 @@ Featured Image Slider
     overflow: visible
 }
 */
+/* line 226, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
+.brick {
+  height: 150px;
+  width: 150px; }
+  /* line 230, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
+  .brick.medium {
+    height: 225px;
+    width: 225px; }
+  /* line 235, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
+  .brick.large {
+    height: 300px;
+    width: 300px; }
+
 /* -----------------------------------------
 Gallery List Styles
 ----------------------------------------- */
-/* line 229, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-#galleryList img {
-  height: 200px; }

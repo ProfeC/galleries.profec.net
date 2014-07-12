@@ -3,6 +3,12 @@
   "title": "ProfeC.net Photo Gallery",
   "dependencies": {
     "foundation": "zurb/bower-foundation",
-    "font-awesome": "FortAwesome/Font-Awesome"
+    "font-awesome": "FortAwesome/Font-Awesome",
+    "justifiedImageRows": "~0.0.1"
+  },
+  "devDependencies": {
+    "foundation": "zurb/bower-foundation",
+    "font-awesome": "FortAwesome/Font-Awesome",
+    "justifiedImageRows": "~0.0.1"
   }
 }

@@ -53,6 +53,26 @@ module.exports = function(grunt) {
             ],
             dest: '<%= dirs.scripts.dest %>/frameworks.min.js'
         },
+        plugins_dev: {
+            options: {
+                stripBanners: false,
+            },
+            src: [
+                'bower_components/justifiedImageRows/dist/justifiedImageRows.js',
+                'bower_components/justifiedImageRows/dist/dependencies.js'
+            ],
+            dest: '<%= dirs.scripts.dest %>/plugins.min.js'
+        },
+        plugins_dist: {
+            options: {
+                stripBanners: false,
+            },
+            src: [
+                'bower_components/justifiedImageRows/dist/justifiedImageRows.js',
+                'bower_components/justifiedImageRows/dist/dependencies.js'
+            ],
+            dest: '<%= dirs.scripts.dest %>/plugins.min.js'
+        },
         scripts_dev: {
             options: {
                 stripBanners: false,
@@ -79,15 +99,15 @@ module.exports = function(grunt) {
         main: {
             files: [
                 {
-                    'js/modernizr.min.js': 'bower_components/modernizr/modernizr.js',
-                    'js/jquery.min.js': 'bower_components/jquery/dist/jquery.min.js'
+                    '<%= dirs.scripts.dest %>/modernizr.min.js': 'bower_components/modernizr/modernizr.js',
+                    '<%= dirs.scripts.dest %>/jquery.min.js': 'bower_components/jquery/dist/jquery.min.js'
                 },
                 {
-                    dest: 'fonts/font-awesome/',
+                    dest: '<%= dirs.fonts.dest %>/font-awesome/',
                     expand: true,
                     flatten: true,
                     filter: 'isFile',
-                    src: 'bower_components/font-awesome/fonts/**'
+                    src: '<%= dirs.scripts.src %>/font-awesome/fonts/**'
                 }
             ]
         }
@@ -172,7 +192,10 @@ module.exports = function(grunt) {
 
 
     watch: {
-        grunt: { files: ['Gruntfile.js'] },
+        grunt: {
+            files: ['Gruntfile.js'],
+            tasks: ['default']
+        },
 
         sass: {
             files: '<%= dirs.style.src %>/**/*.scss',
@@ -193,6 +216,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('build', ['clean', 'sass:dist', 'concat:frameworks_dist', 'concat:scripts_dist', 'uglify:dist', 'copy']);
-    grunt.registerTask('default', ['clean', 'sass:dev', 'concat:frameworks_dev', 'concat:scripts_dev', 'uglify:dev', 'copy', 'watch']);
+    grunt.registerTask('build', ['clean', 'sass:dist', 'concat:frameworks_dist', 'concat:plugins_dist', 'concat:scripts_dist', 'uglify:dist', 'copy']);
+    grunt.registerTask('default', ['clean', 'sass:dev', 'concat:frameworks_dev', 'concat:plugins_dev', 'concat:scripts_dev', 'uglify:dev', 'copy', 'watch']);
 }
