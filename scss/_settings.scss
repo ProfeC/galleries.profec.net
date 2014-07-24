@@ -402,7 +402,7 @@
 // $clearing-close-size: 30px;
 
 // We use these to style the arrows
-// $clearing-arrow-size: 12px;
+$clearing-arrow-size: 16px;
 // $clearing-arrow-color: $clearing-close-color;
 
 // We use these to style captions
@@ -412,8 +412,8 @@
 
 // We use these to make the image and carousel height and style
 // $clearing-active-img-height: 85%;
-// $clearing-carousel-height: 120px;
-// $clearing-carousel-thumb-width: 120px;
+$clearing-carousel-height: 150px;
+$clearing-carousel-thumb-width: 150px;
 // $clearing-carousel-thumb-active-border: 1px solid rgb(255,255,255);
 
 // Dropdown

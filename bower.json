@@ -4,11 +4,13 @@
   "dependencies": {
     "foundation": "zurb/bower-foundation",
     "font-awesome": "FortAwesome/Font-Awesome",
-    "justifiedImageRows": "~0.0.1"
+    "justifiedImageRows": "~0.0.1",
+    "freewall": "~1.0.4"
   },
   "devDependencies": {
     "foundation": "zurb/bower-foundation",
     "font-awesome": "FortAwesome/Font-Awesome",
-    "justifiedImageRows": "~0.0.1"
+    "justifiedImageRows": "~0.0.1",
+    "freewall": "~1.0.4"
   }
 }

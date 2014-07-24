@@ -1,3 +1,10 @@
+/* -----------------------------------------
+External Fonts
+----------------------------------------- */
+/*@import url(http://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans);*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed|Open+Sans);*/
+@import url(http://fonts.googleapis.com/css?family=Cabin|Stoke);
+
 @import "settings";
 @import "foundation";
 
@@ -39,14 +46,7 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-/* -----------------------------------------
-External Fonts
------------------------------------------ */
-/*@import url(http://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans);*/
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed|Open+Sans);*/
-@import url(http://fonts.googleapis.com/css?family=Cabin|Stoke);
-
-
+@import 'gallery';
 
 /* -----------------------------------------
 Shared Styles
@@ -198,49 +198,3 @@ Featured Image Slider
 #featured.orbit img {
     display: block;
 }
-
-/* 
- * -----------------------------------------
- *  Gallery Styles
- * -----------------------------------------
- */
- 
-#gallery {
-    padding-top: 15px;
-}
-#gallery ul[data-clearing].block-grid > li {
-    height: 200px;
-    overflow: hidden;
-    margin: 0 0 13px 0
-}
-.clearing-assembled .clearing-container ul[data-clearing] li img {
-    max-width:150px;
-    max-height:100%;
-}
-/* #gallery .clearing-container .carousel ul[data-clearing].block-grid > li {
-    height: 100px;
-    overflow: visible
-}
-*/
-
-.brick {
-    height: 150px;
-    width: 150px;
-
-    &.medium {
-        height: 225px;
-        width: 225px;
-    }
-
-    &.large {
-        height: 300px;
-        width: 300px;
-    }
-}
-
-/* -----------------------------------------
-Gallery List Styles
------------------------------------------ */
-//#galleryList img {
-//    height: 200px;
-//}

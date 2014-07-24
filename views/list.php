@@ -1,9 +1,6 @@
-<div id="galleryList">
 <?php
-// Get the list of galleries
-$galleryArray = $this->model->getGalleryList();
 foreach($galleryArray as $gallery){
-	echo "\t<section class=\"row\">\n\t\t<div class=\"small-12 columns\" data-equalizer><header><h3 class=\"subheader\">" . $gallery . "</h3></header>
+	echo "\t<section id=\"" . $gallery . "\" class=\"galleryList row\">\n\t\t<div class=\"small-12 columns\"><header><h3 class=\"subheader\">" . $gallery . "</h3></header>
 	\n";
 	echo "\t\t\t<ul class=\"small-block-grid-3\">";
 	
@@ -17,10 +14,9 @@ foreach($galleryArray as $gallery){
         // this should be from the gallery model, not model model.
         // $galleryDescription = $this->model->getDescription(GALLERY_ROOT . $gallery ."/" . $directory);
         
-		echo "<li data-equalizer-watch><div class=\"panel radius text-center\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" alt=\"\" class=\"text-center\" /></a><h4 class=\"subheader\"><a href=\"" . $imageLink . "\">$directory</a></h4>" /*. $galleryDescription*/ . "</div></li>\n";
+		echo "<li><div class=\"panel radius text-center\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" alt=\"\" class=\"text-center\" /></a><h4 class=\"subheader\"><a href=\"" . $imageLink . "\">$directory</a></h4>" /*. $galleryDescription*/ . "</div></li>\n";
 	};
 
-	echo "\t\t</ul></div>\n\t</section>";
+	echo "\t\t</ul></section>\n\t";
 	}
 ?>
-</div>

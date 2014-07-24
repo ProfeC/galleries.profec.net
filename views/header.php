@@ -14,20 +14,15 @@
 
       <!--[if lt IE 9]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-      <div id="siteTitle" class="contain-to-grid">
+      <div id="siteTitle">
           <div class="row">
               <div class="small-12 columns">
                   <h1><a href="<?php echo $_SERVER['PHP_SELF'] ?>" title="Koert-Clark Photography">Koert-Clark Photography</a></h1>
+                  <?php include 'navigation.php'; ?>
               </div>
           </div>
-      </div>
-      <div id="siteNav">
-          <div class="row">
-              <div class="small-12 columns">
-                  <?php //include('views/navigation.php'); ?>
-              </div>
-          </div>
-      </div>
+     </div>
+
       <div id="pageTitle" class="contain-to-grid">
           <div class="row">
               <div class="small-12 columns">

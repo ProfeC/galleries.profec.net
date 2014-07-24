@@ -59,7 +59,9 @@ module.exports = function(grunt) {
             },
             src: [
                 'bower_components/justifiedImageRows/dist/justifiedImageRows.js',
-                'bower_components/justifiedImageRows/dist/dependencies.js'
+                'bower_components/justifiedImageRows/dist/dependencies.js',
+                'bower_components/calcImageDimensions/dist/calcImageDimensions.js',
+                'bower_components/freewall/freewall.js'
             ],
             dest: '<%= dirs.scripts.dest %>/plugins.min.js'
         },
@@ -69,7 +71,9 @@ module.exports = function(grunt) {
             },
             src: [
                 'bower_components/justifiedImageRows/dist/justifiedImageRows.js',
-                'bower_components/justifiedImageRows/dist/dependencies.js'
+                'bower_components/justifiedImageRows/dist/dependencies.js',
+                'bower_components/calcImageDimensions/dist/calcImageDimensions.js',
+                'bower_components/freewall/freewall.js'
             ],
             dest: '<%= dirs.scripts.dest %>/plugins.min.js'
         },

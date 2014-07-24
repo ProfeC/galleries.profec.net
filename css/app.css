@@ -1,3 +1,9 @@
+/* -----------------------------------------
+External Fonts
+----------------------------------------- */
+/*@import url(http://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans);*/
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed|Open+Sans);*/
+@import url(http://fonts.googleapis.com/css?family=Cabin|Stoke);
 /* line 327, bower_components/foundation/scss/foundation/components/global */
 meta.foundation-version {
   font-family: "/5.2.3/"; }
@@ -2135,7 +2141,7 @@ button, .button {
       display: block;
       width: 0;
       height: 0;
-      border: solid 12px; }
+      border: solid 16px; }
       /* line 155, bower_components/foundation/scss/foundation/components/clearing */
       .clearing-main-prev > span:hover, .clearing-main-next > span:hover {
         opacity: 0.8; }
@@ -2160,7 +2166,7 @@ button, .button {
   /* line 179, bower_components/foundation/scss/foundation/components/clearing */
   .clearing-assembled .clearing-container .carousel {
     background: rgba(51, 51, 51, 0.8);
-    height: 120px;
+    height: 150px;
     margin-top: 10px;
     text-align: center; }
     /* line 185, bower_components/foundation/scss/foundation/components/clearing */
@@ -2173,7 +2179,7 @@ button, .button {
       /* line 192, bower_components/foundation/scss/foundation/components/clearing */
       .clearing-assembled .clearing-container .carousel > ul li {
         display: block;
-        width: 120px;
+        width: 150px;
         min-height: inherit;
         float: left;
         overflow: hidden;
@@ -6153,12 +6159,58 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 
+/* 
+ * -----------------------------------------
+ *  Gallery Styles
+ * -----------------------------------------
+ */
+/* line 7, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+#gallery {
+  padding-top: 15px; }
+
+/* #gallery .clearing-container .carousel ul[data-clearing].block-grid > li {
+    height: 100px;
+    overflow: visible
+}
+*/
 /* -----------------------------------------
-External Fonts
+Gallery List Styles
 ----------------------------------------- */
-/*@import url(http://fonts.googleapis.com/css?family=Kaushan+Script|Open+Sans);*/
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed|Open+Sans);*/
-@import url(http://fonts.googleapis.com/css?family=Cabin|Stoke);
+/* line 34, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+#free-wall {
+  padding-top: 15px; }
+  /* line 39, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .brick {
+    margin-bottom: 5px; }
+  /* line 45, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size320 {
+    width: 320px;
+    height: 320px; }
+  /* line 50, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size44 {
+    width: 100%;
+    height: 100%; }
+  /* line 55, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size22 {
+    width: 50%;
+    height: 50%; }
+  /* line 60, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size14 {
+    width: 25%;
+    height: 100%; }
+  /* line 65, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size41 {
+    width: 100%;
+    height: 25%; }
+  /* line 70, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size24 {
+    width: 50%;
+    height: 100%; }
+  /* line 75, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/gallery */
+  #free-wall .size42 {
+    width: 100%;
+    height: 50%; }
+
 /* -----------------------------------------
 Shared Styles
 ----------------------------------------- */
@@ -6311,45 +6363,3 @@ Featured Image Slider
 /* line 198, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
 #featured.orbit img {
   display: block; }
-
-/* 
- * -----------------------------------------
- *  Gallery Styles
- * -----------------------------------------
- */
-/* line 208, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-#gallery {
-  padding-top: 15px; }
-
-/* line 211, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-#gallery ul[data-clearing].block-grid > li {
-  height: 200px;
-  overflow: hidden;
-  margin: 0 0 13px 0; }
-
-/* line 216, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-.clearing-assembled .clearing-container ul[data-clearing] li img {
-  max-width: 150px;
-  max-height: 100%; }
-
-/* #gallery .clearing-container .carousel ul[data-clearing].block-grid > li {
-    height: 100px;
-    overflow: visible
-}
-*/
-/* line 226, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-.brick {
-  height: 150px;
-  width: 150px; }
-  /* line 230, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-  .brick.medium {
-    height: 225px;
-    width: 225px; }
-  /* line 235, /Users/Lee/Google Drive/Repositories/SIites-galleries.profec.net/scss/app.scss */
-  .brick.large {
-    height: 300px;
-    width: 300px; }
-
-/* -----------------------------------------
-Gallery List Styles
------------------------------------------ */

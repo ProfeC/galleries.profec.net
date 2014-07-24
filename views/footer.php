@@ -2,7 +2,6 @@
         <div id="footer" class="contain-to-grid">
             <div class="row">
                 <div class="small-12 columns">
-                    <p>&nbsp;</p>
                 </div>
             </div>
         </div>

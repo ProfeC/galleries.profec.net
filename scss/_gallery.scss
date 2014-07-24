@@ -1,0 +1,79 @@
+/* 
+ * -----------------------------------------
+ *  Gallery Styles
+ * -----------------------------------------
+ */
+ 
+#gallery {
+    padding-top: 15px;
+}
+
+//#gallery ul[data-clearing].block-grid > li {
+//    height: 200px;
+//    overflow: hidden;
+//    margin: 0 0 13px 0
+//}
+//
+//.clearing-assembled .clearing-container ul[data-clearing] li img {
+//    max-width: 150px;
+//    max-height: 100px;
+//    overflow: hidden;
+//}
+
+/* #gallery .clearing-container .carousel ul[data-clearing].block-grid > li {
+    height: 100px;
+    overflow: visible
+}
+*/
+
+
+/* -----------------------------------------
+Gallery List Styles
+----------------------------------------- */
+
+#free-wall {
+//    width: 100%;
+//    height: 100%;
+    padding-top: 15px;
+
+    .brick {
+//        height: 250px;
+        margin-bottom: 5px;
+//        width: 250px;
+    }
+    
+    .size320 {
+        width: 320px;
+        height: 320px;
+    }
+    
+    .size44 {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .size22 {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .size14 {
+        width: 25%;
+        height: 100%;
+    }
+    
+    .size41 {
+        width: 100%;
+        height: 25%;
+    }
+    
+    .size24 {
+        width: 50%;
+        height: 100%;
+    }
+    
+    .size42 {
+        width: 100%;
+        height: 50%;
+    }
+}
