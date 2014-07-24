@@ -16,8 +16,8 @@
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: Foundation, Modernizr, jQuery, Orbit, Reveal
-  Software: Textmate2, Git
+  Components: Modernizr, jQuery, Orbit, 
+  Software: Textmate, Git
 
 
 

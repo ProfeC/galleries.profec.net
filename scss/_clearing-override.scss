@@ -1,0 +1,8 @@
+// Overrides for Foundation's Clearing JS module
+
+// Changes the color of the close button.
+.clearing-blackout { 
+    .clearing-close {
+        color: rgb(204, 204, 204);
+    }
+}

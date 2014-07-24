@@ -19,3 +19,15 @@ $RECYCLE.BIN/
 
 #Sassy Cache
 .sass-cache
+
+#Image Galleries
+images/gallery
+
+#Bower Components
+bower_components
+
+#Node Modules
+node_modules
+
+#Font Awesome
+fonts/font-awesome

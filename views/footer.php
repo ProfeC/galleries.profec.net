@@ -1,43 +1,40 @@
         </div>
         <div id="footer" class="contain-to-grid">
             <div class="row">
-                <div class="twelve column">
-                    <p>&nbsp;</p>
+                <div class="small-12 columns">
                 </div>
             </div>
         </div>
         <div id="pageClose">
             <div class="row">
-                <div class="twelve column">
+                <div class="small-12 columns">
                     <p>&nbsp;</p>
                 </div>
             </div>
         </div>
-        <!--<script language="Javascript" type="text/javascript">
-            //<![CDATA[
-                //google.load("jquery", "1");
-                //google.load("jqueryui", "1");
-                google.load("webfont", "1");
+        <!--
+        <script language="Javascript" type="text/javascript">
+        //<![CDATA[
+            //google.load("jquery", "1");
+            //google.load("jqueryui", "1");
+            google.load("webfont", "1");
 
-                google.setOnLoadCallback(function(){
-                    WebFont.load({
-                        google:{
-                            //families:['Exo::latin']
-                            families:['Open Sans::latin']
-                        }
-                    });
+            google.setOnLoadCallback(function(){
+                WebFont.load({
+                    google:{
+                        //families:['Exo::latin']
+                        families:['Open Sans::latin']
+                    }
                 });
-            //]]>
-            </script>-->
+            });
+        //]]>
+        </script>
+        -->
   
         <!-- Included JS Files (Compressed) -->
-        <script src="javascripts/foundation/jquery.js"></script>
-        <script src="/javascripts/foundation/foundation.min.js"></script>
-  
-        <!-- Initialize JS Plugins -->
-        <script src="/javascripts/foundation/app.js"></script>
-
-        <!-- <script src="javascripts/plugins.js"></script> -->
-        <script src="javascripts/script.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/frameworks.min.js"></script>
+        <script src="js/plugins.min.js"></script>
+        <script src="js/app.min.js"></script>
 	</body>
 </html>
