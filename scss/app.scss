@@ -75,18 +75,20 @@ h5,
 h6 {
     font-family:'Stoke', serif;
 }
-#siteTitle, #siteTitle, #siteTitle a, #siteTitle a:visited, #siteTitle a:hover {
-    background-color: #232323;
+#siteTitle,
+#siteTitle,
+#siteTitle a,
+#siteTitle a:visited,
+#siteTitle a:hover {
+    background-color: rgb(80, 12, 12);
     color: #f2f2f2;
-    /*font-style: italic;
-    font-weight:700;*/
 }
-#siteNav {
-    background: #333;
-    border-top: 1px solid #383838;
-    border-bottom: 1px solid #444;
+
+#main-nav {
+    background: rgb(35, 35, 35);
     color: #e2e2e2
 }
+
 #pageTitle {
     background: #d7d7d7;
     border-top: 1px solid #000;

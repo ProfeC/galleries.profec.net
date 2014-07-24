@@ -18,10 +18,11 @@
           <div class="row">
               <div class="small-12 columns">
                   <h1><a href="<?php echo $_SERVER['PHP_SELF'] ?>" title="Koert-Clark Photography">Koert-Clark Photography</a></h1>
-                  <?php include 'navigation.php'; ?>
               </div>
           </div>
      </div>
+     
+     <?php include 'navigation.php'; ?>
 
       <div id="pageTitle" class="contain-to-grid">
           <div class="row">
