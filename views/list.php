@@ -14,7 +14,7 @@ foreach($galleryArray as $gallery){
         // this should be from the gallery model, not model model.
         // $galleryDescription = $this->model->getDescription(GALLERY_ROOT . $gallery ."/" . $directory);
         
-		echo "<li><div class=\"panel radius text-center\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" alt=\"\" class=\"text-center\" /></a><h4 class=\"subheader\"><a href=\"" . $imageLink . "\">$directory</a></h4>" /*. $galleryDescription*/ . "</div></li>\n";
+		echo "<li><div class=\"panel radius text-center\"><a href=\"" . $imageLink . "\" class=\"th\"><img src=\"" . $imageThumbnail . "\" alt=\"\" class=\"text-center\" /></a><h5 class=\"subheader\"><a href=\"" . $imageLink . "\">$directory</a></h5>" /*. $galleryDescription*/ . "</div></li>\n";
 	};
 
 	echo "\t\t</ul></section>\n\t";
